@@ -2,7 +2,7 @@ const APIUtil = require("./api_util.js");
 
 class FollowToggle {
   constructor(el) {
-    this.userId = $(el).data('user-id'); // curent
+    this.userId = $(el).data('user-id');
     this.followState = $(el).data('initial-follow-state');
     this.$el = $(el);
     this.render();
@@ -35,7 +35,6 @@ class FollowToggle {
     this.render();
 
     request.then(() => {
-      console.log('in promise');
       this.toggleFollowState();
       this.render();
     }, (err) => console.log(err));
